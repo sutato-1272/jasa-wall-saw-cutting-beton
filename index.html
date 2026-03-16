@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="google-site-verification" content="KODE_GSC_ANDA" />
+    
+    <meta name="google-site-verification" content="MASUKKAN_KODE_GSC_DISINI" />
+    
 	<title>Jasa Wall Saw Cutting Beton Bertulang | PT Mitra Sentosa Rahardja</title>
     
     <meta name="description" content="Jasa potong lantai & tembok beton bertulang presisi tinggi. Minim getaran, aman untuk struktur. Melayani area Jakarta, Bekasi, Cikarang, Karawang & sekitarnya.">
@@ -15,6 +17,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preload" as="image" href="img/jasa-wall-saw-cutting-beton.webp">
 
     <script type="application/ld+json">
     {
@@ -116,9 +120,11 @@
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-item:hover img { transform: scale(1.05); border-color: var(--primary); }
         
-        /* MAPS HOVER */
+        /* MAPS WRAPPER FIX (AGAR TIDAK PUDAR DI DESKTOP) */
+        .maps-container { max-width: 800px; margin: 0 auto; }
+        .map-wrapper { display: block; border-radius: 1rem; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .map-wrapper:hover img { transform: scale(1.02); filter: brightness(1.1); }
-        .map-wrapper img { transition: 0.5s; }
+        .map-wrapper img { transition: 0.5s; width: 100%; height: auto; display: block; }
 
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
@@ -144,8 +150,7 @@
     <nav style="position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
         <div class="container" style="height: 75px; display: flex; justify-content: space-between; align-items: center;">
             <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
-                <img src="img/logo-mits.png" alt="Logo MITS Engineering" style="height: 45px; width: auto; object-fit: contain;">
-                
+                <img src="img/logo-mits.webp" alt="Logo MITS Engineering" style="height: 45px; width: auto; object-fit: contain;">
                 <div style="line-height: 1.1; display: flex; flex-direction: column; justify-content: center;" class="hidden-mobile">
                     <div class="brand-font" style="font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: 1px;">
                         MITS<span class="text-primary">ENGINEERING</span>
@@ -304,9 +309,11 @@
                 <p style="color: #9ca3af;">Kunjungi kantor operasional kami. Klik peta di bawah untuk panduan arah via Google Maps.</p>
             </div>
             
-            <a href="https://share.google/w3WACPY0kSAPDlBgs" target="_blank" class="map-wrapper" style="display: block; border-radius: 1rem; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <img src="img/ilustrasi-maps.webp" alt="Peta Lokasi PT Mitra Sentosa Rahardja" style="width: 100%; height: auto; display: block;" loading="lazy">
-            </a>
+            <div class="maps-container">
+                <a href="https://share.google/w3WACPY0kSAPDlBgs" target="_blank" rel="noopener noreferrer" aria-label="Buka lokasi workshop PT Mitra Sentosa Rahardja di Google Maps" class="map-wrapper">
+                    <img src="img/ilustrasi-maps.webp" alt="Peta Lokasi PT Mitra Sentosa Rahardja" loading="lazy">
+                </a>
+            </div>
         </div>
     </section>
 
@@ -375,7 +382,7 @@
             </div>
             
             <div class="text-center" style="margin-top: 3rem; font-size: 0.85rem; color: #4b5563;">
-                &copy; 2026 PT Mitra Sentosa Rahardja | mitsengineering.com
+                © 2026 PT Mitra Sentosa Rahardja | mitsengineering.com
             </div>
         </div>
     </footer>
