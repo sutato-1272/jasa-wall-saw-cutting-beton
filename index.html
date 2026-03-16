@@ -16,53 +16,44 @@
     
     <link rel="preload" as="image" href="img/jasa-wall-saw-cutting-beton.webp" fetchpriority="high">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap">
-    </noscript>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "GeneralContractor",
-      "name": "PT Mitra Sentosa Rahardja - Wall Saw Division",
+      "name": "PT Mitra Sentosa Rahardja",
       "image": "https://mitsengineering.com/img/jasa-wall-saw-cutting-beton.webp",
       "url": "https://mitsengineering.com/",
       "telephone": "+6281213117488",
-      "address": [
-        {
+      "priceRange": "$$$",
+      "address": {
           "@type": "PostalAddress",
           "streetAddress": "Jl. Praja III No 37, Arteri Pondok Indah, Kebayoran Lama",
           "addressLocality": "Jakarta Selatan",
           "postalCode": "12240",
           "addressCountry": "ID"
-        }
-      ],
-      "areaServed": ["Jakarta", "Bekasi", "Cikarang", "Karawang", "Tangerang", "Bogor", "Depok"],
-      "priceRange": "$$$"
+      }
     }
     </script>
 
     <style>
-        /* --- TITAN CORE CSS (INLINE CRITICAL CSS) --- */
         :root {
             --primary: #ea580c; 
-            --accent: #eab308;  
             --dark: #111827;    
             --darker: #030712;
-            --glass: rgba(17, 24, 39, 0.7);
-            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(17, 24, 39, 0.85);
+            --border: rgba(255, 255, 255, 0.15);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--dark); color: #e5e7eb; line-height: 1.6; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--dark); color: #f3f4f6; line-height: 1.6; overflow-x: hidden; text-rendering: optimizeLegibility; }
         
-        h1, h2, h3, .brand-font { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1, h2, h3 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; color: #fff; }
         .text-primary { color: var(--primary); }
-        .text-white { color: #fff; }
         .text-center { text-align: center; }
         
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
@@ -71,341 +62,162 @@
         .grid-3 { grid-template-columns: repeat(3, 1fr); }
         .grid-4 { grid-template-columns: repeat(4, 1fr); }
         .flex { display: flex; align-items: center; }
-        .justify-between { justify-content: space-between; }
-        .justify-center { justify-content: center; }
-        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-        .mb-4 { margin-bottom: 1rem; } .mb-8 { margin-bottom: 2rem; }
-        .hidden-mobile { display: block; }
-
-        .glass-card {
-            background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border); border-radius: 1rem; overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        .py-20 { padding: 5rem 0; }
+        .mb-4 { margin-bottom: 1rem; }
         
-        /* HERO REVISI FIX */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            background-color: var(--darker);
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.75));
-            z-index: 2;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            padding: 0 1.5rem;
-        }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
-        
-        .btn {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.8rem 2rem; border-radius: 999px;
-            font-weight: 700; text-decoration: none; font-size: 0.95rem;
-            cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .btn-primary { background: linear-gradient(90deg, var(--primary), #f97316); color: #fff; box-shadow: 0 0 15px rgba(234, 88, 12, 0.4); }
-        .btn-wa { background: #25D366; color: #fff; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+        .glass-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
 
-        .area-card { position: relative; height: 260px; cursor: pointer; }
-        .area-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%); }
-        .area-overlay {
-            position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 100%);
-            display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
-        }
+        /* HERO FIX FOR CLS & SPEED */
+        .hero { position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--darker); }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(3,7,18,0.9), rgba(3,7,18,0.7)); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 900px; padding: 0 1rem; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+        
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 2rem; border-radius: 999px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-wa { background: #16a34a; color: #fff; }
+
+        .area-card { position: relative; height: 260px; overflow: hidden; border-radius: 1rem; }
+        .area-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+        .area-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-        .gallery-item { border-radius: 0.5rem; overflow: hidden; aspect-ratio: 4/3; position: relative; border: 1px solid var(--border); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item { border-radius: 0.8rem; overflow: hidden; aspect-ratio: 4/3; background: #1f2937; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        .maps-container { max-width: 800px; margin: 0 auto; }
-        .map-wrapper { display: block; border-radius: 1rem; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .map-wrapper img { width: 100%; height: auto; display: block; }
+        .maps-container { max-width: 800px; margin: 0 auto; border-radius: 1rem; overflow: hidden; border: 1px solid var(--border); }
 
         @media (max-width: 768px) {
-            .hero { padding-top: 80px; align-items: center; } /* Memastikan Hero terpusat di mobile */
             .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; padding: 0 10px; }
+            .hero { min-height: 70vh; }
             .hidden-mobile { display: none; }
-            .nav-btn { display: none; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .area-card.full-width { grid-column: span 1 !important; }
-            .mobile-float { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 100; padding: 1rem; background: rgba(3,7,18,0.95); backdrop-filter: blur(10px); display: flex; gap: 1rem; border-top: 1px solid var(--border); }
-            .mobile-float .btn { flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.8rem 1rem;}
+            .mobile-float { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 100; padding: 1rem; background: rgba(3,7,18,0.95); display: flex; gap: 1rem; border-top: 1px solid var(--border); }
+            .mobile-float .btn { flex: 1; justify-content: center; font-size: 0.85rem; }
         }
+
         .pulse { animation: pulse-glow 2s infinite; }
-        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(234,88,12,0.4); } 70% { box-shadow: 0 0 0 15px rgba(234,88,12,0); } }
     </style>
 </head>
 <body>
 
-    <nav style="position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
-        <div class="container" style="height: 75px; display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;" aria-label="Halaman Utama PT Mitra Sentosa Rahardja">
-                <img src="img/logo-mits.png" alt="Logo MITS Engineering" width="150" height="45" style="height: 45px; width: auto; object-fit: contain;">
-                <div style="line-height: 1.1; display: flex; flex-direction: column; justify-content: center;" class="hidden-mobile">
-                    <div class="brand-font" style="font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: 1px;">
-                        MITS<span class="text-primary">ENGINEERING</span>
-                    </div>
+    <nav style="position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(3,7,18,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
+        <div class="container" style="height: 70px; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;" aria-label="Beranda PT Mitra Sentosa Rahardja">
+                <img src="img/logo-mits.png" alt="Logo MITS" width="45" height="45" style="border-radius: 5px;">
+                <div class="brand-font" style="font-size: 1.3rem; font-weight: 800; color: #fff;">
+                    MITS<span class="text-primary">ENGINEERING</span>
                 </div>
             </a>
-            <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON,%20mohon%20info%20selengkapnya" class="btn btn-primary nav-btn pulse" aria-label="Undang Survey Lokasi via WhatsApp">
-                UNDANG SURVEY LOKASI
-            </a>
+            <a href="https://wa.me/6281213117488" class="btn btn-primary hidden-mobile pulse" aria-label="Hubungi kami via WhatsApp">KONSULTASI GRATIS</a>
         </div>
     </nav>
 
     <header class="hero">
-        <img src="img/jasa-wall-saw-cutting-beton.webp" alt="Background Jasa Wall Saw" class="hero-bg" fetchpriority="high" decoding="sync">
+        <img src="img/jasa-wall-saw-cutting-beton.webp" alt="Pekerjaan Wall Saw Cutting Beton" class="hero-bg" fetchpriority="high" decoding="sync" width="1920" height="1080">
         <div class="hero-overlay"></div>
-        
         <div class="hero-content">
-            <div style="display: inline-block; padding: 0.5rem 1.2rem; border-radius: 50px; background: rgba(234, 88, 12, 0.15); border: 1px solid rgba(234, 88, 12, 0.5); color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 1.5rem; text-transform: uppercase;">
-                DIAMOND BLADE TECHNOLOGY
-            </div>
-            <h1 class="text-white">
-                SPESIALIS WALL SAW<br>
-                <span style="color: transparent; -webkit-background-clip: text; background-image: linear-gradient(to right, #fff, #9ca3af);">CUTTING BETON BERTULANG</span>
-            </h1>
-            <p style="color: #d1d5db; font-size: 1.15rem; max-width: 800px; margin: 0 auto 2.5rem; line-height: 1.7;">
-                Solusi pemotongan lantai & tembok beton dengan presisi tinggi. <strong>Tanpa getaran merusak, tanpa retak struktur.</strong> Aman untuk pabrik aktif, rumah sakit, dan gedung bertingkat.
-            </p>
-            <div class="flex justify-center gap-4" style="flex-wrap: wrap;">
-                <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse" style="font-size: 1rem; padding: 1rem 2.5rem;" aria-label="Konsultasi dan Minta Harga via WhatsApp">
-                    KONSULTASI & MINTA HARGA
-                </a>
-            </div>
+            <div style="color: var(--primary); font-weight: 700; letter-spacing: 2px; margin-bottom: 1rem; font-size: 0.9rem;">DIAMOND BLADE TECHNOLOGY</div>
+            <h1>SPESIALIS WALL SAW<br><span class="text-primary">CUTTING BETON BERTULANG</span></h1>
+            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 2rem;">Potong beton presisi tanpa getaran merusak. Solusi terbaik untuk pabrik dan gedung bertingkat.</p>
+            <a href="https://wa.me/6281213117488" class="btn btn-primary pulse" style="padding: 1rem 2.5rem;" aria-label="Minta penawaran harga wall saw">CEK HARGA TERBARU</a>
         </div>
     </header>
 
-    <div style="background: var(--darker); padding: 3rem 0; border-bottom: 1px solid var(--border);">
-        <div class="container grid-4" style="text-align: center;">
-            <div><h3 class="text-primary" style="font-size: 1.8rem; margin-bottom: 5px;">PRESISI TINGGI</h3><p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">Potongan Lurus & Rapi</p></div>
-            <div><h3 class="text-primary" style="font-size: 1.8rem; margin-bottom: 5px;">ZERO CRACK</h3><p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">Minim Getaran & Aman</p></div>
-            <div><h3 class="text-primary" style="font-size: 1.8rem; margin-bottom: 5px;">NON-STOP</h3><p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">Aman Untuk Area Operasional</p></div>
-            <div><h3 class="text-primary" style="font-size: 1.8rem; margin-bottom: 5px;">HEAVY DUTY</h3><p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">Mampu Memotong Beton Tebal</p></div>
+    <section style="background: var(--darker); padding: 3rem 0; border-bottom: 1px solid var(--border);">
+        <div class="container grid-4 text-center">
+            <div><h3 class="text-primary">PRESISI</h3><p style="font-size: 0.85rem; color: #9ca3af;">Hasil Potongan Rapi</p></div>
+            <div><h3 class="text-primary">AMAN</h3><p style="font-size: 0.85rem; color: #9ca3af;">Struktur Tanpa Retak</p></div>
+            <div><h3 class="text-primary">CEPAT</h3><p style="font-size: 0.85rem; color: #9ca3af;">Mesin Wall Saw Modern</p></div>
+            <div><h3 class="text-primary">B2B</h3><p style="font-size: 0.85rem; color: #9ca3af;">Berpengalaman di Pabrik</p></div>
         </div>
-    </div>
+    </section>
 
-    <section id="area-layanan" class="py-20">
+    <section class="py-20">
         <div class="container">
-            <div class="text-center mb-8">
-                <h2 class="text-white" style="font-size: 2.5rem; margin-bottom: 0.5rem;">JANGKAUAN <span class="text-primary">PROJECT AREA</span></h2>
-                <p style="color: #9ca3af; max-width: 600px; margin: 0 auto;">Pilih lokasi proyek Anda untuk respon cepat tim lapangan kami. Melayani seluruh kawasan industri Jabodetabek.</p>
-            </div>
-
+            <h2 class="text-center mb-8">JANGKAUAN <span class="text-primary">AREA PROYEK</span></h2>
             <div class="grid grid-3">
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20CIKARANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Cikarang">
-                    <img src="img/potong-beton-cikarang.webp" alt="Jasa Cutting Beton Cikarang" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">KAWASAN INDUSTRI</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">CIKARANG</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Spesialis Pabrik & Manufaktur</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BEKASI" class="glass-card area-card" aria-label="Layanan Wall Saw Area Bekasi">
-                    <img src="img/cutting-beton-bekasi.webp" alt="Jasa Wall Saw Bekasi" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">LOGISTIK & GUDANG</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">KOTA BEKASI</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Modifikasi Struktur Existing</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20KARAWANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Karawang">
-                    <img src="img/jasa-cutting-karawang.webp" alt="Potong Lantai Beton Karawang" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">MEGA PROJECT</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">KARAWANG</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Pembongkaran Beton Pabrik Aktif</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20JAKARTA" class="glass-card area-card" aria-label="Layanan Wall Saw Area Jakarta">
-                    <img src="img/wall-saw-cutting-jakarta.webp" alt="Wall Saw Jakarta" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">HIGH-RISE BUILDING</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">DKI JAKARTA</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Bukaan Lift, Shaft, Ducting Gedung</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20TANGERANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Tangerang">
-                    <img src="img/wall-saw-tangerang.webp" alt="Potong Tembok Beton Tangerang" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">KOMERSIAL & PABRIK</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">TANGERANG RAYA</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Renovasi & Pemotongan Presisi</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BOGOR" class="glass-card area-card" aria-label="Layanan Wall Saw Area Bogor">
-                    <img src="img/cutting-dinding-bogor.webp" alt="Cutting Slab Beton Bogor" class="area-img" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">INFRASTRUKTUR & PABRIK</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">KOTA BOGOR</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Cutting Lantai & Utilitas Publik</p>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20DEPOK" class="glass-card area-card full-width" style="grid-column: 1 / -1;" aria-label="Layanan Wall Saw Area Depok">
-                    <img src="img/potong-beton-depok.webp" alt="Wall Saw Cutting Depok" class="area-img" style="object-position: center 30%;" loading="lazy">
-                    <div class="area-overlay">
-                        <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">RESIDENSIAL & FASILITAS</span>
-                        <h3 class="text-white" style="font-size: 1.5rem;">KOTA DEPOK</h3>
-                        <p style="font-size: 0.85rem; color: #d1d5db; margin-top: 5px;">Modifikasi Struktur & Pembongkaran Beton</p>
-                    </div>
-                </a>
+                <div class="area-card">
+                    <img src="img/potong-beton-cikarang.webp" alt="Cutting Beton Cikarang" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Cikarang</h3></div>
+                </div>
+                <div class="area-card">
+                    <img src="img/cutting-beton-bekasi.webp" alt="Wall Saw Bekasi" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Bekasi</h3></div>
+                </div>
+                <div class="area-card">
+                    <img src="img/jasa-cutting-karawang.webp" alt="Cutting Beton Karawang" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Karawang</h3></div>
+                </div>
+                <div class="area-card">
+                    <img src="img/wall-saw-cutting-jakarta.webp" alt="Wall Saw Jakarta" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Jakarta</h3></div>
+                </div>
+                <div class="area-card">
+                    <img src="img/wall-saw-tangerang.webp" alt="Wall Saw Tangerang" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Tangerang</h3></div>
+                </div>
+                <div class="area-card">
+                    <img src="img/cutting-dinding-bogor.webp" alt="Wall Saw Bogor" class="area-img" loading="lazy" width="400" height="300">
+                    <div class="area-overlay"><h3>Bogor</h3></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20" style="background: var(--darker);">
         <div class="container">
-            <div class="flex justify-between mb-8">
-                <div>
-                    <h2 class="text-white" style="font-size: 2.2rem;">DOKUMENTASI <span class="text-primary">PROJECT KAMI</span></h2>
-                    <p style="color: #9ca3af;">Bukti pengerjaan presisi di lapangan dengan mesin Wall Saw modern.</p>
-                </div>
-            </div>
-            
+            <h2 class="mb-8">DOKUMENTASI <span class="text-primary">LAPANGAN</span></h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-1.webp" alt="Proyek Wall Saw 1" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-2.webp" alt="Proyek Wall Saw 2" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-3.webp" alt="Proyek Wall Saw 3" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-4.webp" alt="Proyek Wall Saw 4" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-5.webp" alt="Proyek Wall Saw 5" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-6.webp" alt="Proyek Wall Saw 6" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-7.webp" alt="Proyek Wall Saw 7" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-8.webp" alt="Proyek Wall Saw 8" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-9.webp" alt="Proyek Wall Saw 9" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-10.webp" alt="Proyek Wall Saw 10" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-11.webp" alt="Proyek Wall Saw 11" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-12.webp" alt="Proyek Wall Saw 12" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-13.webp" alt="Proyek Wall Saw 13" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-14.webp" alt="Proyek Wall Saw 14" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-15.webp" alt="Proyek Wall Saw 15" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-16.webp" alt="Proyek Wall Saw 16" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-17.webp" alt="Proyek Wall Saw 17" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-18.webp" alt="Proyek Wall Saw 18" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-19.webp" alt="Proyek Wall Saw 19" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-20.webp" alt="Proyek Wall Saw 20" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-21.webp" alt="Proyek Wall Saw 21" loading="lazy" width="800" height="600"></div>
-                <div class="gallery-item"><img src="img/portofolio-wall-saw-22.webp" alt="Proyek Wall Saw 22" loading="lazy" width="800" height="600"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-1.webp" alt="Proyek 1" loading="lazy" width="400" height="300"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-2.webp" alt="Proyek 2" loading="lazy" width="400" height="300"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-3.webp" alt="Proyek 3" loading="lazy" width="400" height="300"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-4.webp" alt="Proyek 4" loading="lazy" width="400" height="300"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-5.webp" alt="Proyek 5" loading="lazy" width="400" height="300"></div>
+                <div class="gallery-item"><img src="img/portofolio-wall-saw-6.webp" alt="Proyek 6" loading="lazy" width="400" height="300"></div>
             </div>
         </div>
     </section>
 
-    <section class="py-20" style="background: var(--dark);">
-        <div class="container">
-            <div class="text-center mb-8">
-                <h2 class="text-white" style="font-size: 2.2rem;">LOKASI <span class="text-primary">WORKSHOP KAMI</span></h2>
-                <p style="color: #9ca3af;">Kunjungi kantor operasional kami. Klik peta di bawah untuk panduan arah via Google Maps.</p>
-            </div>
-            
+    <section class="py-20">
+        <div class="container text-center">
+            <h2 class="mb-8">LOKASI <span class="text-primary">WORKSHOP KAMI</span></h2>
             <div class="maps-container">
-                <a href="https://www.google.com/maps/search/?api=1&query=Jasa+Coring+Beton+Mitra+Sentosa+Rahardja+Jakarta+Selatan" target="_blank" rel="noopener noreferrer" aria-label="Buka lokasi workshop PT Mitra Sentosa Rahardja di Google Maps" class="map-wrapper">
-                    <img src="img/ilustrasi-maps.webp" alt="Peta Lokasi PT Mitra Sentosa Rahardja" loading="lazy" width="800" height="400">
+                <a href="https://www.google.com/maps/search/?api=1&query=Jasa+Coring+Beton+Mitra+Sentosa+Rahardja+Jakarta+Selatan" target="_blank" rel="noopener" aria-label="Buka navigasi ke workshop kami">
+                    <img src="img/ilustrasi-maps.webp" alt="Peta Lokasi PT MSR" width="800" height="400" loading="lazy">
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20" style="background: #000; border-top: 1px solid #1f2937;">
+    <footer style="background: #000; padding: 5rem 0 2rem; border-top: 1px solid var(--border);">
         <div class="container">
             <div class="grid grid-3 mb-8">
                 <div>
-                    <h2 class="text-white" style="margin-bottom: 1rem; font-family: 'Rajdhani', sans-serif;">MITS<span class="text-primary">ENGINEERING</span></h2>
-                    <p style="color: #9ca3af; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                        PT Mitra Sentosa Rahardja melayani Wall Saw Cutting Beton untuk lantai, tembok, bukaan pintu, jendela, lift, shaft, dan struktur beton lainnya untuk proyek industri skala besar di seluruh Indonesia.
-                    </p>
+                    <h2 class="mb-4">MITS<span class="text-primary">ENGINEERING</span></h2>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Spesialis pemotongan beton bertulang untuk kebutuhan struktur industri dan komersial di Indonesia.</p>
                 </div>
-
                 <div>
-                    <h3 class="text-white" style="margin-bottom: 1.2rem; font-size: 1.1rem; text-transform: uppercase;">Website Official Kami</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 1rem;">
-                            <a href="https://mitsengineering.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website utama mitsengineering.com" class="btn btn-outline" style="border: 1px solid #374151; width: 100%; justify-content: flex-start; padding: 0.8rem 1rem; color: #d1d5db; background: rgba(31,41,55,0.5); font-size: 0.85rem; text-transform: none;">
-                                🌐 mitsengineering.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://wiresawcutting.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website utama wiresawcutting.com" class="btn btn-outline" style="border: 1px solid #374151; width: 100%; justify-content: flex-start; padding: 0.8rem 1rem; color: #d1d5db; background: rgba(31,41,55,0.5); font-size: 0.85rem; text-transform: none;">
-                                🌐 wiresawcutting.com
-                            </a>
-                        </li>
-                    </ul>
+                    <h3 class="mb-4" style="font-size: 1rem;">Website Utama</h3>
+                    <a href="https://mitsengineering.com/" target="_blank" rel="noopener" style="color: #fff; display: block; margin-bottom: 0.5rem; text-decoration: none;">🌐 mitsengineering.com</a>
+                    <a href="https://wiresawcutting.com/" target="_blank" rel="noopener" style="color: #fff; display: block; text-decoration: none;">🌐 wiresawcutting.com</a>
                 </div>
-
                 <div>
-                    <h3 class="text-white" style="margin-bottom: 1rem; font-size: 1.1rem; text-transform: uppercase;">Hubungi Tim Kami</h3>
-                    <ul style="list-style: none; color: #9ca3af; font-size: 0.95rem;">
-                        <li class="mb-4">
-                            <span style="display: block; font-size: 0.8rem; color: #6b7280;">TELP / WHATSAPP:</span>
-                            <a href="tel:6281213117488" class="text-primary" style="font-weight: 700; font-size: 1.2rem; text-decoration: none; display: block;">0812-1311-7488</a>
-                            <a href="tel:6287898400088" class="text-white" style="text-decoration: none;">0878-9840-0088</a>
-                        </li>
-                        <li>
-                            <span style="display: block; font-size: 0.8rem; color: #6b7280;">CHAT ONLY:</span>
-                            <a href="https://wa.me/628138111599" class="text-white" style="text-decoration: none;">0813-8111-599</a>
-                        </li>
-                    </ul>
+                    <h3 class="mb-4" style="font-size: 1rem;">Kontak 24/7</h3>
+                    <a href="tel:6281213117488" style="color: var(--primary); font-weight: 700; font-size: 1.2rem; text-decoration: none;">0812-1311-7488</a>
                 </div>
             </div>
-
-            <div style="padding-top: 2rem; border-top: 1px solid #1f2937;">
-                <h3 class="text-white" style="font-size: 1.1rem; margin-bottom: 1.5rem;">Layanan Pemotongan Beton Struktural & FAQ</h3>
-                <div class="grid grid-2" style="gap: 3rem;">
-                    <div>
-                        <h4 class="text-primary" style="font-size: 0.95rem; margin-bottom: 0.8rem;">Mengapa Memilih Metode Wall Saw Kami?</h4>
-                        <ul style="list-style: none; color: #9ca3af; font-size: 0.85rem; line-height: 1.8;">
-                            <li>✓ <strong>Aman untuk area existing:</strong> Berbeda dengan bobok manual, <em>potong lantai beton bertulang</em> dengan Wall Saw minim getaran sehingga mencegah retak pada struktur utama gedung.</li>
-                            <li>✓ <strong>Spesialis Area Industri:</strong> Kami sering menangani <em>jasa wall saw untuk pabrik aktif</em> di Cikarang dan Karawang tanpa mengganggu jam operasional (*shutdown* terbatas).</li>
-                            <li>✓ <strong>Berbagai Modifikasi:</strong> Sangat efektif untuk <em>cutting beton untuk bukaan lift</em>, shaft, ducting mekanikal elektrikal, dan pembuatan akses baru di dinding beton.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-primary" style="font-size: 0.95rem; margin-bottom: 0.8rem;">Pencarian & Area Cakupan Terkait</h4>
-                        <p style="color: #9ca3af; font-size: 0.85rem; line-height: 1.8; text-align: justify;">
-                            Sebagai penyedia <strong>jasa wall saw cutting beton</strong> terkemuka, kami menawarkan <em>harga wall saw cutting beton</em> yang kompetitif dengan hasil kerja yang profesional. Kami melayani <em>jasa cutting slab beton</em>, <em>jasa potong tembok beton</em>, serta <em>jasa potong beton gedung</em> presisi tinggi. 
-                            <br><br>
-                            Bagi Anda yang mencari <em>jasa cutting beton terdekat</em>, tim kami dapat dimobilisasi dengan cepat untuk <em>wall saw cutting Jakarta</em>, <em>jasa cutting beton Bekasi</em>, Tangerang, Bogor, hingga melayani proyek berskala nasional di seluruh Indonesia. Kami menjamin proses <em>potong beton tanpa getaran</em> yang berisiko.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem; font-size: 0.85rem; color: #4b5563;">
-                © 2026 PT Mitra Sentosa Rahardja | mitsengineering.com
+            <div style="border-top: 1px solid #1f2937; padding-top: 2rem; font-size: 0.85rem; color: #4b5563;" class="text-center">
+                &copy; 2026 PT Mitra Sentosa Rahardja. All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <div class="mobile-float md:hidden">
-        <a href="tel:6281213117488" class="btn btn-outline" style="background: #1f2937; color: #fff; border: 1px solid #374151;" aria-label="Telepon Langsung">
-            📞 TELEPON
-        </a>
-        <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse" aria-label="Hubungi via WhatsApp">
-            📱 WHATSAPP
-        </a>
+        <a href="tel:6281213117488" class="btn btn-primary" aria-label="Telepon Tim Ahli Kami">📞 CALL</a>
+        <a href="https://wa.me/6281213117488" class="btn btn-wa pulse" aria-label="Chat WhatsApp">📱 WHATSAPP</a>
     </div>
 
 </body>
