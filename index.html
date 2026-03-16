@@ -16,9 +16,13 @@
     
     <link rel="preload" as="image" href="img/jasa-wall-saw-cutting-beton.webp" fetchpriority="high">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Rajdhani:wght@700;800&display=swap">
+    </noscript>
 
     <script type="application/ld+json">
     {
@@ -43,10 +47,9 @@
     </script>
 
     <style>
-        /* --- TITAN CORE CSS (INDUSTRIAL THEME) --- */
+        /* --- TITAN CORE CSS (INLINE CRITICAL CSS) --- */
         :root {
             --primary: #ea580c; 
-            --primary-hover: #c2410c;
             --accent: #eab308;  
             --dark: #111827;    
             --darker: #030712;
@@ -79,13 +82,35 @@
             border: 1px solid var(--border); border-radius: 1rem; overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .glass-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(234, 88, 12, 0.15); }
-
-        /* HERO REVISI EKSTREM (Tanpa Background CSS) */
+        
+        /* HERO REVISI FIX */
         .hero {
+            position: relative;
             min-height: 90vh;
-            display: flex; align-items: center; justify-content: center; text-align: center; 
-            position: relative; overflow: hidden; background-color: var(--darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: var(--darker);
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.75));
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            padding: 0 1.5rem;
         }
         .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
         
@@ -93,33 +118,28 @@
             display: inline-flex; align-items: center; gap: 0.5rem;
             padding: 0.8rem 2rem; border-radius: 999px;
             font-weight: 700; text-decoration: none; font-size: 0.95rem;
-            transition: all 0.3s; cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 0.5px;
+            cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 0.5px;
         }
         .btn-primary { background: linear-gradient(90deg, var(--primary), #f97316); color: #fff; box-shadow: 0 0 15px rgba(234, 88, 12, 0.4); }
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(234, 88, 12, 0.6); }
         .btn-wa { background: #25D366; color: #fff; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
-        .btn-wa:hover { background: #1da851; transform: scale(1.05); }
 
         .area-card { position: relative; height: 260px; cursor: pointer; }
-        .area-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(30%); }
+        .area-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%); }
         .area-overlay {
             position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 100%);
             display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
         }
-        .area-card:hover .area-img { transform: scale(1.1); filter: grayscale(0%); }
 
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
         .gallery-item { border-radius: 0.5rem; overflow: hidden; aspect-ratio: 4/3; position: relative; border: 1px solid var(--border); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.05); border-color: var(--primary); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
         .maps-container { max-width: 800px; margin: 0 auto; }
         .map-wrapper { display: block; border-radius: 1rem; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .map-wrapper:hover img { transform: scale(1.02); filter: brightness(1.1); }
-        .map-wrapper img { transition: 0.5s; width: 100%; height: auto; display: block; }
+        .map-wrapper img { width: 100%; height: auto; display: block; }
 
         @media (max-width: 768px) {
-            .hero { padding-top: 100px; align-items: flex-start; }
+            .hero { padding-top: 80px; align-items: center; } /* Memastikan Hero terpusat di mobile */
             .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; padding: 0 10px; }
@@ -130,9 +150,8 @@
             .mobile-float { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 100; padding: 1rem; background: rgba(3,7,18,0.95); backdrop-filter: blur(10px); display: flex; gap: 1rem; border-top: 1px solid var(--border); }
             .mobile-float .btn { flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.8rem 1rem;}
         }
-
-        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); } }
         .pulse { animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); } }
     </style>
 </head>
 <body>
@@ -147,18 +166,17 @@
                     </div>
                 </div>
             </a>
-            <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON,%20mohon%20info%20selengkapnya" class="btn btn-primary nav-btn pulse">
+            <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON,%20mohon%20info%20selengkapnya" class="btn btn-primary nav-btn pulse" aria-label="Undang Survey Lokasi via WhatsApp">
                 UNDANG SURVEY LOKASI
             </a>
         </div>
     </nav>
 
     <header class="hero">
-        <img src="img/jasa-wall-saw-cutting-beton.webp" alt="Background Jasa Wall Saw" fetchpriority="high" decoding="sync" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+        <img src="img/jasa-wall-saw-cutting-beton.webp" alt="Background Jasa Wall Saw" class="hero-bg" fetchpriority="high" decoding="sync">
+        <div class="hero-overlay"></div>
         
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.75)); z-index: 1;"></div>
-        
-        <div class="container" style="z-index: 10; position: relative;">
+        <div class="hero-content">
             <div style="display: inline-block; padding: 0.5rem 1.2rem; border-radius: 50px; background: rgba(234, 88, 12, 0.15); border: 1px solid rgba(234, 88, 12, 0.5); color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 1.5rem; text-transform: uppercase;">
                 DIAMOND BLADE TECHNOLOGY
             </div>
@@ -170,7 +188,7 @@
                 Solusi pemotongan lantai & tembok beton dengan presisi tinggi. <strong>Tanpa getaran merusak, tanpa retak struktur.</strong> Aman untuk pabrik aktif, rumah sakit, dan gedung bertingkat.
             </p>
             <div class="flex justify-center gap-4" style="flex-wrap: wrap;">
-                <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse" style="font-size: 1rem; padding: 1rem 2.5rem;">
+                <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse" style="font-size: 1rem; padding: 1rem 2.5rem;" aria-label="Konsultasi dan Minta Harga via WhatsApp">
                     KONSULTASI & MINTA HARGA
                 </a>
             </div>
@@ -194,7 +212,7 @@
             </div>
 
             <div class="grid grid-3">
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20CIKARANG" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20CIKARANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Cikarang">
                     <img src="img/potong-beton-cikarang.webp" alt="Jasa Cutting Beton Cikarang" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">KAWASAN INDUSTRI</span>
@@ -203,7 +221,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BEKASI" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BEKASI" class="glass-card area-card" aria-label="Layanan Wall Saw Area Bekasi">
                     <img src="img/cutting-beton-bekasi.webp" alt="Jasa Wall Saw Bekasi" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">LOGISTIK & GUDANG</span>
@@ -212,7 +230,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20KARAWANG" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20KARAWANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Karawang">
                     <img src="img/jasa-cutting-karawang.webp" alt="Potong Lantai Beton Karawang" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">MEGA PROJECT</span>
@@ -221,7 +239,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20JAKARTA" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20JAKARTA" class="glass-card area-card" aria-label="Layanan Wall Saw Area Jakarta">
                     <img src="img/wall-saw-cutting-jakarta.webp" alt="Wall Saw Jakarta" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">HIGH-RISE BUILDING</span>
@@ -230,7 +248,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20TANGERANG" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20TANGERANG" class="glass-card area-card" aria-label="Layanan Wall Saw Area Tangerang">
                     <img src="img/wall-saw-tangerang.webp" alt="Potong Tembok Beton Tangerang" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">KOMERSIAL & PABRIK</span>
@@ -239,7 +257,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BOGOR" class="glass-card area-card">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20BOGOR" class="glass-card area-card" aria-label="Layanan Wall Saw Area Bogor">
                     <img src="img/cutting-dinding-bogor.webp" alt="Cutting Slab Beton Bogor" class="area-img" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">INFRASTRUKTUR & PABRIK</span>
@@ -248,7 +266,7 @@
                     </div>
                 </a>
 
-                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20DEPOK" class="glass-card area-card full-width" style="grid-column: 1 / -1;">
+                <a href="https://wa.me/6281213117488?text=Halo,%20saya%20butuh%20jasa%20cutting%20beton%20untuk%20area%20DEPOK" class="glass-card area-card full-width" style="grid-column: 1 / -1;" aria-label="Layanan Wall Saw Area Depok">
                     <img src="img/potong-beton-depok.webp" alt="Wall Saw Cutting Depok" class="area-img" style="object-position: center 30%;" loading="lazy">
                     <div class="area-overlay">
                         <span class="text-primary" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">RESIDENSIAL & FASILITAS</span>
@@ -382,10 +400,10 @@
     </footer>
 
     <div class="mobile-float md:hidden">
-        <a href="tel:6281213117488" class="btn btn-outline" style="background: #1f2937; color: #fff; border: 1px solid #374151;">
+        <a href="tel:6281213117488" class="btn btn-outline" style="background: #1f2937; color: #fff; border: 1px solid #374151;" aria-label="Telepon Langsung">
             📞 TELEPON
         </a>
-        <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse">
+        <a href="https://wa.me/6281213117488?text=Halo%20PT%20MITRA%20SENTOSA%20RAHARDJA,%20saya%20tertarik%20dengan%20JASA%20WALL%20SAW%20CUTTING%20BETON" class="btn btn-wa pulse" aria-label="Hubungi via WhatsApp">
             📱 WHATSAPP
         </a>
     </div>
