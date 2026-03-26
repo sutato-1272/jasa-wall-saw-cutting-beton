@@ -60,10 +60,11 @@
         .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 2.2rem;border-radius:999px;font-weight:700;text-decoration:none;text-transform:uppercase;transition:.3s;color:#fff}
         .btn-primary{background:#ea580c;border:2px solid #ea580c}.btn-wa{background:#16a34a}
         
-        .area-card{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:1rem;border:1px solid var(--border);background:#1f2937}
-        .area-img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7)}
-        .area-overlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
-        
+        .area-card{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:1rem;border:1px solid var(--border);background:#1f2937; display:block; text-decoration:none;}
+        .area-img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7); transition: transform 0.5s;}
+        .area-overlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;}
+        .area-card:hover .area-img { transform: scale(1.1); filter: brightness(1); }
+
         .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
         .gallery-item{position:relative;border-radius:.8rem;overflow:hidden;aspect-ratio:4/3;background:#1f2937;border:1px solid var(--border)}
         .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
@@ -71,14 +72,17 @@
         .maps-container{max-width:800px;margin:0 auto;border-radius:1rem;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,0.5);background:#1f2937;aspect-ratio:2/1}
         .maps-container img{width:100%;height:100%;object-fit:cover;display:block}
         
+        /* FIX UNTUK GRID ITEM KE-7 (DEPOK) AGAR DI TENGAH */
+        .card-depok { grid-column: 2; }
+
         @media (max-width:768px){
             .grid-3,.grid-4{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}
-            /* FIX OVERFLOW HERO MOBILE */
             .hero{min-height:100vh; padding-top:110px; padding-bottom:100px; align-items:flex-start;}
             .hero h1{font-size:1.8rem; margin-bottom: 0.8rem;}
             .hero-subtitle{font-size:0.8rem; letter-spacing:1px; margin-bottom:0.5rem;}
             .hero p{font-size:0.95rem; margin-bottom:0.8rem;}
             .hidden-mobile{display:none}
+            .card-depok { grid-column: 1; } /* Reset grid di mobile */
             .mobile-float{position:fixed;bottom:0;left:0;width:100%;z-index:100;padding:1rem;background:rgba(3,7,18,0.98);display:flex;gap:.8rem;border-top:1px solid var(--border)}
             .mobile-float .btn{flex:1;font-size:.8rem;padding:.8rem}
         }
@@ -120,34 +124,54 @@
         </div>
     </section>
 
+    <!-- CLOSED-LOOP SILO SECTION DONGKRAKUSAHA -->
     <section class="py-20">
         <div class="container">
             <h2 class="text-center mb-8">CAKUPAN <span class="text-primary">AREA LAYANAN</span></h2>
             <div class="grid grid-3">
-                <div class="area-card">
+                
+                <!-- 1. CIKARANG -->
+                <a href="https://dongkrakusaha.com/produk/889536/segera-hub-08138111599-kontraktor-cutting-beton-cikarang-wall-saw-mitsengineering" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca artikel proyek kami di Cikarang">
                     <img src="img/potong-beton-cikarang.webp" alt="Wall Saw Cikarang" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Cikarang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Kawasan Industri & Pabrik</p></div>
-                </div>
-                <div class="area-card">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Cikarang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Kawasan Industri & Pabrik</p></div>
+                </a>
+                
+                <!-- 2. BEKASI -->
+                <a href="https://dongkrakusaha.com/produk/889541/segera-hub-0878-9840-0088-jasa-wall-saw-beton-pabrik-bekasi-cikarang" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca artikel proyek kami di Bekasi">
                     <img src="img/cutting-beton-bekasi.webp" alt="Wall Saw Bekasi" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Bekasi</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Logistik & Gudang</p></div>
-                </div>
-                <div class="area-card">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Bekasi</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Logistik & Gudang</p></div>
+                </a>
+                
+                <!-- 3. KARAWANG -->
+                <a href="https://dongkrakusaha.com/produk/889530/segera-hub-0812-1311-7488-vendor-jasa-cutting-beton-proyek-industri" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca artikel vendor proyek industri Karawang">
                     <img src="img/jasa-cutting-karawang.webp" alt="Wall Saw Karawang" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Karawang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Mega Project Industri</p></div>
-                </div>
-                <div class="area-card">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Karawang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Mega Project Industri</p></div>
+                </a>
+                
+                <!-- 4. JAKARTA -->
+                <a href="https://dongkrakusaha.com/produk/889531/segera-hub-0878-9840-0088-spesialis-wall-saw-proyek-besar-gedung-aktif-mitsengineering" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca artikel proyek gedung aktif Jakarta">
                     <img src="img/wall-saw-cutting-jakarta.webp" alt="Wall Saw Jakarta" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Jakarta</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">High-Rise Building & Lift Shaft</p></div>
-                </div>
-                <div class="area-card">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Jakarta</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">High-Rise Building & Lift Shaft</p></div>
+                </a>
+                
+                <!-- 5. TANGERANG -->
+                <a href="https://dongkrakusaha.com/produk/889542/segera-hub-08138111599-panduan-jasa-wall-saw-cutting-beton-mitsengineering" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca panduan Wall Saw di Tangerang">
                     <img src="img/wall-saw-tangerang.webp" alt="Wall Saw Tangerang" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Tangerang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Komersial & Perkantoran</p></div>
-                </div>
-                <div class="area-card">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Tangerang</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Komersial & Perkantoran</p></div>
+                </a>
+                
+                <!-- 6. BOGOR -->
+                <a href="https://dongkrakusaha.com/produk/889528/segera-hub-08138111599-jasa-wall-saw-cutting-beton-jabodetabek" target="_blank" rel="noopener noreferrer" class="area-card" aria-label="Baca artikel proyek kami di Bogor">
                     <img src="img/cutting-dinding-bogor.webp" alt="Wall Saw Bogor" class="area-img" loading="lazy" width="800" height="600">
-                    <div class="area-overlay"><h3 style="font-size: 1.5rem;">Bogor & Depok</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Infrastruktur & Publik</p></div>
-                </div>
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Bogor</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Infrastruktur & Utilitas</p></div>
+                </a>
+                
+                <!-- 7. DEPOK -->
+                <a href="https://dongkrakusaha.com/produk/889538/segera-hub-0812-1311-7488-jasa-cutting-slab-beton-rumah-sakit-mall-mitsengineering" target="_blank" rel="noopener noreferrer" class="area-card card-depok" aria-label="Baca artikel proyek Rumah Sakit di Depok">
+                    <img src="img/potong-beton-depok.webp" alt="Wall Saw Depok" class="area-img" loading="lazy" width="800" height="600">
+                    <div class="area-overlay"><h3 style="font-size: 1.5rem; text-decoration: none;">Depok</h3><p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Fasilitas Publik & Medis</p></div>
+                </a>
+                
             </div>
         </div>
     </section>
@@ -207,7 +231,7 @@
                 <div>
                     <h3 class="mb-4" style="font-size: 1.1rem; text-transform: uppercase;">Link Utama</h3>
                     <a href="https://mitsengineering.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website mitsengineering.com" style="color: #fff; display: block; margin-bottom: 0.8rem; text-decoration: none;">🌐 mitsengineering.com</a>
-                    <a href="https://wiresawcutting.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website wiresawcutting.com" style="color: #fff; display: block; text-decoration: none;">🌐 wiresawcutting.com</a>
+                    <a href="https://wiresawcutting.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website wiresawcutting.com" style="color: #fff; display: block; margin-bottom: 0.8rem; text-decoration: none;">🌐 wiresawcutting.com</a>
 					<a href="https://jasabongkarbeton.com/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website jasabongkarbeton.com" style="color: #fff; display: block; text-decoration: none;">🌐 jasabongkarbeton.com</a>
                 </div>
                 <div>
